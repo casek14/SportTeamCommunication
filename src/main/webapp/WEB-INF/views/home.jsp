@@ -1,15 +1,21 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="s" %>
+
 <html>
 <head>
 	<title>Home</title>
 </head>
 <body>
-<h1>
-	Hello world!  
-	
-</h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+  <div align="center">
+  <h1>Hovno</h1>
+  
+  <table>
+    <tr><td><a href="${pageContext.request.contextPath }/customer/register">Register customer</a></td></tr>
+    <tr><td><a href="${pageContext.request.contextPath }/customer/login">Login customer</a></td></tr>
+  </table>
+  
+  </div>
+
 </body>
 </html>
