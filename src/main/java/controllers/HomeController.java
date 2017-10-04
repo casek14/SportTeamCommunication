@@ -1,4 +1,4 @@
-package controller;
+package controllers;
 
 import java.util.Locale;
 
@@ -9,7 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import controller.HomeController;
+import controllers.HomeController;
 
 
 @Controller
