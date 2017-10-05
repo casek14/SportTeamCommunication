@@ -31,6 +31,7 @@
         <property name="annotatedClasses">
             <list>
                 <!-- <value>com.demo.login.beans.Customer</value>  -->
+                <value>model.Member</value>
             </list>
         </property>
     </bean>
@@ -41,6 +42,13 @@
         <property name="sessionFactory" ref="sessionFactory" />    
     </bean>
     
+    <bean id="memberDao" class="dao.MemberDaoImplementation">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    
+    <bean id="customerService" class="services.MemberServiceImplementation">
+        <property name="memberDao" ref="memberDao"></property>
+    </bean>
 
     
 </beans>

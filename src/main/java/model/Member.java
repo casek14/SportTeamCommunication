@@ -24,7 +24,7 @@ public class Member {
 	//TODO list of teams which a member belongs to + constructors
 	
 	public Member() {
-	
+
 	}
 	
 	@Id
@@ -60,8 +60,8 @@ public class Member {
 	@Embedded
 	private Address address;
 	
-	@ManyToMany
-	private List<Team> teams;
+//	@ManyToMany
+//	private List<Team> teams;
 
 	public int getMember_id() {
 		return member_id;
