@@ -60,8 +60,8 @@ public class Member {
 	@Embedded
 	private Address address;
 	
-//	@ManyToMany
-//	private List<Team> teams;
+	@ManyToMany
+	private List<Team> teams;
 
 	public int getMember_id() {
 		return member_id;
@@ -125,6 +125,14 @@ public class Member {
 
 	public void setAdministrator(boolean administrator) {
 		this.administrator = administrator;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 	
 	

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import controllers.HomeController;
+import model.Address;
 import model.Member;
 import services.MemberService;
 
@@ -24,6 +25,7 @@ public class HomeController {
 	private MemberService memberService;
 	
 	Member member = new Member();
+	Address address = new Address();
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -38,6 +40,12 @@ public class HomeController {
 		member.setLastName("Cach");
 		member.setPassword("workshop");
 		member.setPhoneNumber("721-875-199");
+		
+		address.setCity("Horni Jeleni");
+		address.setCp("119");
+		address.setPostCode("53374");
+		address.setStreet("Rude armady");
+		member.setAddress(address);
 		
 		memberService.saveMember(member);
 		

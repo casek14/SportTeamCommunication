@@ -32,6 +32,9 @@
             <list>
                 <!-- <value>com.demo.login.beans.Customer</value>  -->
                 <value>model.Member</value>
+                <value>model.Comment</value>
+                <value>model.Address</value>
+                <value>model.Team</value>
             </list>
         </property>
     </bean>
