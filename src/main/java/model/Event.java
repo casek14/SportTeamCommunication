@@ -21,8 +21,6 @@ public class Event {
 		
 	}
 	
-	@OneToOne
-	private Comment comment;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -74,6 +72,22 @@ public class Event {
 
 	public void setDate(String date) {
 		this.date = date;
+	}
+
+	public Team getTeam() {
+		return team;
+	}
+
+	public void setTeam(Team team) {
+		this.team = team;
+	}
+
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
 	}
 	
 	

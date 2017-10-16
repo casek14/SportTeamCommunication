@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -35,18 +36,18 @@ public class Team {
 	private String description;
 	
 	@Id
-	@Column
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int team_id;
 
 	
-	@OneToMany(mappedBy="team")
+	@OneToMany(mappedBy="message_id")
 	private List<Message> messages;
 	
-	@OneToMany(mappedBy="team")
+	@OneToMany(mappedBy="event_id")
 	private List<Event> events;
 	
-	@ManyToMany(mappedBy="team")
+	@ManyToMany
+	@JoinColumn()
 	private List<Member> members;
 	// TODO list of members + contructors
 	
@@ -81,6 +82,22 @@ public class Team {
 
 	public void setMessages(List<Message> messages) {
 		this.messages = messages;
+	}
+
+	public List<Event> getEvents() {
+		return events;
+	}
+
+	public void setEvents(List<Event> events) {
+		this.events = events;
+	}
+
+	public List<Member> getMembers() {
+		return members;
+	}
+
+	public void setMembers(List<Member> members) {
+		this.members = members;
 	}
 	
 	

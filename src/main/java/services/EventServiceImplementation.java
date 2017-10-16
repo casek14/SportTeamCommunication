@@ -1,25 +1,25 @@
 package services;
 
-import dao.CommentDao;
-import model.Comment;
+import dao.EventDao;
+import model.Event;
 
-public class EventServiceImplementation implements CommentService{
+public class EventServiceImplementation implements EventService{
 
-	private CommentDao commentDao;
+	private EventDao eventDao;
 	
 	@Override
-	public void saveComment(Comment comment) {
-		commentDao.saveComment(comment);
+	public void saveEvent(Event event) {
+		eventDao.saveEvent(event);
 	}
 
-	public CommentDao getCommentDao() {
-		return commentDao;
+	public EventDao getEventDao() {
+		return eventDao;
 	}
 
-	public void setCommentDao(CommentDao commentDao) {
-		this.commentDao = commentDao;
+	public void setEventDao(EventDao eventDao) {
+		this.eventDao = eventDao;
 	}
-	
+
 	
 
 }

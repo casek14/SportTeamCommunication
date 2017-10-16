@@ -33,21 +33,6 @@ public class HomeController {
 	@RequestMapping(value = "/", method= RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
-		member.setAdministrator(false);
-		member.setEmail("jcach@gmail.com");
-		member.setFavouriteSports("Fotbal, hokej, ping-pong");
-		member.setFirstName("Jan");
-		member.setLastName("Cach");
-		member.setPassword("workshop");
-		member.setPhoneNumber("721-875-199");
-		
-		address.setCity("Horni Jeleni");
-		address.setCp("119");
-		address.setPostCode("53374");
-		address.setStreet("Rude armady");
-		member.setAddress(address);
-		
-		memberService.saveMember(member);
 		
 		return "home";
 	}

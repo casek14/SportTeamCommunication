@@ -35,6 +35,8 @@
                 <value>model.Comment</value>
                 <value>model.Address</value>
                 <value>model.Team</value>
+                <value>model.Message</value>
+                <value>model.Event</value>
             </list>
         </property>
     </bean>
@@ -49,9 +51,43 @@
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
     
-    <bean id="customerService" class="services.MemberServiceImplementation">
+    <bean id="memberService" class="services.MemberServiceImplementation">
         <property name="memberDao" ref="memberDao"></property>
     </bean>
 
     
+    <bean id="commentDao" class="dao.CommentDaoImplementation">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    
+    <bean id="commentService" class="services.CommentServiceImplementation">
+        <property name="commentDao" ref="commentDao"></property>
+    </bean>
+
+
+	<bean id="eventDao" class="dao.EventDaoImplementation">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    
+    <bean id="eventService" class="services.EventServiceImplementation">
+        <property name="eventDao" ref="eventDao"></property>
+    </bean>
+    
+    
+    <bean id="messageDao" class="dao.MessageDaoImplementation">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    
+    <bean id="messageService" class="services.MessageServiceImplementation">
+        <property name="messageDao" ref="messageDao"></property>
+    </bean>
+    
+    
+    <bean id="teamDao" class="dao.TeamDaoImplementation">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    
+    <bean id="teamService" class="services.TeamServiceImplementation">
+        <property name="teamDao" ref="teamDao"></property>
+    </bean>
 </beans>

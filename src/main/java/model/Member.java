@@ -28,7 +28,6 @@ public class Member {
 	}
 	
 	@Id
-	@Column
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int member_id;
 	
@@ -133,6 +132,14 @@ public class Member {
 
 	public void setAddress(Address address) {
 		this.address = address;
+	}
+
+	public List<Team> getTeams() {
+		return teams;
+	}
+
+	public void setTeams(List<Team> teams) {
+		this.teams = teams;
 	}
 	
 	
