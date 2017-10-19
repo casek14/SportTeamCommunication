@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 
@@ -36,6 +37,13 @@ public class Event {
 	@OneToMany
 	private List<Comment> comments = new ArrayList<Comment>();
 
+	
+	/**
+	 * uzivatele kteri se prihlasili na danou udalost
+	 * neboli odklikli ze se dane udalosti zucastni
+	 */
+	@ManyToMany(mappedBy="events")
+	private List<Member> loggedUsers = new ArrayList<Member>();
 	
 	
 	public int getEvent_id() {

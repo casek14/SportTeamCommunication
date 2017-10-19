@@ -30,6 +30,12 @@ public class Member {
 	@ManyToMany(mappedBy="members")
 	private List<Team> teams = new ArrayList<Team>();
 	
+	/**
+	 * udalosti na ktere se dany user prihlasil
+	 */
+	@ManyToMany
+	private List<Event> events = new ArrayList<Event>();
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int member_id;
