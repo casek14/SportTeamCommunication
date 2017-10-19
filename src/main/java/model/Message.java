@@ -30,9 +30,6 @@ public class Message {
 	@Column
 	private String author;
 	
-	@ManyToOne
-	@JoinColumn(name="team_id")
-	private Team team;
 
 	public int getMessage_id() {
 		return message_id;

@@ -2,6 +2,7 @@ package model;
 
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -21,11 +22,13 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Member {
     
 	
-	//TODO list of teams which a member belongs to + constructors
 	
 	public Member() {
 
 	}
+	
+	@ManyToMany(mappedBy="members")
+	private List<Team> teams = new ArrayList<Team>();
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -42,7 +45,7 @@ public class Member {
 	@NotEmpty
 	private String lastName;
 	
-	@Column
+	@Column(unique=true)
 	@NotEmpty
 	private String email;
 	
@@ -59,8 +62,6 @@ public class Member {
 	@Embedded
 	private Address address;
 	
-	@ManyToMany
-	private List<Team> teams;
 
 	public int getMember_id() {
 		return member_id;
@@ -141,7 +142,7 @@ public class Member {
 	public void setTeams(List<Team> teams) {
 		this.teams = teams;
 	}
-	
+
 	
 	 
 	

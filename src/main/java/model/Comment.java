@@ -27,9 +27,7 @@ public class Comment {
 	@Column
 	private String date;
 	
-	@ManyToOne
-	@JoinColumn(name="event_id")
-	private Event event;
+	
 
 	public int getComment_id() {
 		return comment_id;

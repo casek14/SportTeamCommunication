@@ -1,7 +1,9 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -28,7 +31,7 @@ public class Team {
 		
 	}
 	
-	@Column
+	@Column(unique= true)
 	@NotEmpty
 	private String name;
 	
@@ -40,17 +43,15 @@ public class Team {
 	private int team_id;
 
 	
-	@OneToMany(mappedBy="message_id")
-	private List<Message> messages;
+	@OneToMany
+	private List<Message> messages = new ArrayList<Message>();
 	
-	@OneToMany(mappedBy="event_id")
-	private List<Event> events;
+	
+	@OneToMany
+	private List<Event> events = new ArrayList<Event>();
 	
 	@ManyToMany
-	@JoinColumn()
-	private List<Member> members;
-	// TODO list of members + contructors
-	
+	private List<Member> members = new ArrayList<Member>();
 	
 	public String getName() {
 		return name;
@@ -76,13 +77,7 @@ public class Team {
 		this.team_id = team_id;
 	}
 
-	public List<Message> getMessages() {
-		return messages;
-	}
-
-	public void setMessages(List<Message> messages) {
-		this.messages = messages;
-	}
+	
 
 	public List<Event> getEvents() {
 		return events;
@@ -92,6 +87,14 @@ public class Team {
 		this.events = events;
 	}
 
+	public List<Message> getMessages() {
+		return messages;
+	}
+
+	public void setMessages(List<Message> messages) {
+		this.messages = messages;
+	}
+
 	public List<Member> getMembers() {
 		return members;
 	}
@@ -99,6 +102,7 @@ public class Team {
 	public void setMembers(List<Member> members) {
 		this.members = members;
 	}
+
 	
 	
 	
