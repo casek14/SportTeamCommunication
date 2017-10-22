@@ -3,6 +3,7 @@ package controllers;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Query;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -135,7 +136,9 @@ public class TestController {
 		
 		member.getTeams().add(team);
         member1.getTeams().add(team);
-		
+        
+        /*
+		Uncoment kdyz chces ukladat
 		memberService.saveMember(member);
 		commentService.saveComment(comment);
 		commentService.saveComment(comment1);
@@ -149,7 +152,10 @@ public class TestController {
 		messageService.saveMessage(message1);
 		
 		teamService.saveTeam(team);	
-		
+		*/
+         
+        
+        
 		return "test";
 	}
 	

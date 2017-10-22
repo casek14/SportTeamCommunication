@@ -1,11 +1,14 @@
 package dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import model.Comment;
+import model.Event;
 
 public class CommentDaoImplementation implements CommentDao{
 
@@ -38,6 +41,7 @@ public class CommentDaoImplementation implements CommentDao{
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
+
 
 	
 }
