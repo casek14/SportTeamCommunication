@@ -42,7 +42,6 @@ private static final Logger logger = LoggerFactory.getLogger(HomeController.clas
 	
 	@RequestMapping(value="/member/register",method=RequestMethod.POST)
 	public String saveMember(ModelMap model, @ModelAttribute("memberData") @Valid Member member,
-			@ModelAttribute("memberDataAddress") @Valid Address address,
 			BindingResult br, HttpSession session) {
 		
 		MemberValidation memberValidation = new MemberValidation();
