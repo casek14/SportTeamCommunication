@@ -21,11 +21,6 @@ public class HomeController {
 
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
-	@Autowired
-	private MemberService memberService;
-	
-	Member member = new Member();
-	Address address = new Address();
 	
 	/**
 	 * Simply selects the home view to render by returning its name.

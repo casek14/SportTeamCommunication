@@ -3,6 +3,7 @@ package model;
 
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -14,7 +15,9 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
 
 
 @Entity
@@ -53,7 +56,11 @@ public class Member {
 	
 	@Column(unique=true)
 	@NotEmpty
+	@Email
 	private String email;
+	
+	@DateTimeFormat(pattern="dd/MM/yyyy")
+	private Date dateOfBirth;
 	
 	@Column
 	private String phoneNumber;
@@ -147,6 +154,22 @@ public class Member {
 
 	public void setTeams(List<Team> teams) {
 		this.teams = teams;
+	}
+
+	public List<Event> getEvents() {
+		return events;
+	}
+
+	public void setEvents(List<Event> events) {
+		this.events = events;
+	}
+
+	public Date getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 
 	

@@ -41,7 +41,7 @@ public class CommentDaoImplementation implements CommentDao{
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
-
+ 
 
 	
 }
