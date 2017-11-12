@@ -13,5 +13,6 @@ public interface MemberDao {
 	public void saveMember(Member member);
 	public List<Member> getAllMembers();
 	public List<Member> getMembersOfTeam(int TeamID);
+	public Member loginMember(Member member);
 	
 }

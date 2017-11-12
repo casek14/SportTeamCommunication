@@ -22,6 +22,11 @@ public class MemberServiceImplementation implements MemberService{
 		this.memberDao = memberDao;
 	}
 
+	@Override
+	public Member loginMember(Member member) {
+		return memberDao.loginMember(member);
+	}
+
 	
 	
 }

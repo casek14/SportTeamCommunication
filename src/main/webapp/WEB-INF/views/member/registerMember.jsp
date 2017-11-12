@@ -13,10 +13,10 @@
 
 
 <div align="center">
-  <h1>Register Customer</h1>
+  <h1>Register Member</h1>
   <table>
-  <s:form  commandName="teamData"
-  action="${pageContext.request.contextPath }/team/register" method="post">
+  <s:form  commandName="memberData"
+  action="${pageContext.request.contextPath }/member/register" method="post">
   
   <tr>
   <td>Jmeno:</td>

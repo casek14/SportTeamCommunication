@@ -56,6 +56,41 @@ private static final Logger logger = LoggerFactory.getLogger(HomeController.clas
 		return "member/registerSuccessful";
 	}
 	
+	@RequestMapping(value="/member/login", method=RequestMethod.GET)
+	public String showLoginMember(ModelMap model, HttpSession session) {
+		Member member = (Member) session.getAttribute("member");
+	    if(member == null) {
+	    	model.put("memberData", new Member());
+	    	return "member/loginMember";
+	    }
+		
+		return "loginSuccessfull";
+	}
 	
+	@RequestMapping(value="/member/login", method=RequestMethod.POST)
+	public String doLogin(ModelMap model, HttpSession session, @ModelAttribute("memberData") Member member,
+			 BindingResult br) {
+		
+		MemberValidation memberValidation = new MemberValidation();
+		memberValidation.validate(member, br);
+		if(br.hasErrors()) {
+			System.out.println("Mam problem");	
+			return "member/loginMember";
+			
+		}
+		member = memberService.loginMember(member);
+		if(member != null) {
+			session.setAttribute("member", member);
+			return "loginSuccessfull";
+		}
+		
+		return "member/loginMember";
+	}
+	
+	@RequestMapping(value="/member/logout",method=RequestMethod.GET)
+	public String memberLogout(HttpSession session) {
+		session.invalidate();
+		return "home";
+	}
 
 }
