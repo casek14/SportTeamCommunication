@@ -14,5 +14,6 @@ public interface MemberDao {
 	public List<Member> getAllMembers();
 	public List<Member> getMembersOfTeam(int TeamID);
 	public Member loginMember(Member member);
+	public void updateMemberAdministration(int memberID, int teamID);
 	
 }

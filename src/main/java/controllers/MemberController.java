@@ -50,7 +50,6 @@ private static final Logger logger = LoggerFactory.getLogger(HomeController.clas
 			return "member/registerMember";
 		}
 		
-		member.setAdministrator(false);
 		memberService.saveMember(member);
 		session.setAttribute("member", member);
 		return "member/registerSuccessful";

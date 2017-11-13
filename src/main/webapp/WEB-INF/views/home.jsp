@@ -13,6 +13,8 @@
   <table>
     <tr><td><a href="${pageContext.request.contextPath }/member/register">Register member</a></td></tr>
     <tr><td><a href="${pageContext.request.contextPath }/member/login">Login member</a></td></tr>
+    <tr><td><a href="${pageContext.request.contextPath }/team/register ">Create team</a></td></tr>
+    
   </table>
   
   </div>

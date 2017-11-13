@@ -105,7 +105,7 @@ public class TestController {
 		
 	    
 		
-	    member.setAdministrator(false);
+//	    member.setAdministrator(false);
 		member.setEmail("jura-cach@gmail.com");
 		member.setFavouriteSports("Fotbal, hokej, ping-pong");
 		member.setFirstName("Pepa");
@@ -114,7 +114,7 @@ public class TestController {
 		member.setPhoneNumber("111-222-333");
 		member.setAddress(address);
 		
-		member1.setAdministrator(false);
+	//	member1.setAdministrator(false);
 		member1.setEmail("dwarf007@gmail.com");
 		member1.setFavouriteSports("Posilovna, gaucing");
 		member1.setFirstName("Jana");

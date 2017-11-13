@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -43,8 +44,9 @@ public class Member {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int member_id;
 	
+	@ElementCollection
 	@Column
-	private boolean administrator; // this value say if the member is an administrator of the given team
+	private List<Integer> administrator; // this value say if the member is an administrator of the given team
 	
 	@Column
 	@NotEmpty
@@ -132,11 +134,13 @@ public class Member {
 		this.favouriteSports = favouriteSports;
 	}
 
-	public boolean isAdministrator() {
+
+
+	public List<Integer> getAdministrator() {
 		return administrator;
 	}
 
-	public void setAdministrator(boolean administrator) {
+	public void setAdministrator(List<Integer> administrator) {
 		this.administrator = administrator;
 	}
 

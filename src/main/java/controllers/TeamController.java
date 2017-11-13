@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import model.Member;
 import model.Team;
+import services.MemberService;
 import services.TeamService;
 import validation.TeamValidation;
 
@@ -25,10 +27,18 @@ public class TeamController {
 	@Autowired
 	private TeamService teamService;
 	
+	@Autowired
+	private MemberService memberService;
+	
 	@RequestMapping(value="/team/register",method=RequestMethod.GET)
-	public String showRegisterTeamForm(ModelMap model) {
-		model.put("teamData", new Team());
-		return "team/registerTeam";
+	public String showRegisterTeamForm(ModelMap model, HttpSession session) {
+		if(session.getAttribute("member") != null) {
+			model.put("teamData", new Team());
+			return "team/registerTeam";	
+		}
+		
+		return "redirect:/member/login";
+		
 	}
 	
 	
@@ -43,6 +53,9 @@ public class TeamController {
 		
 		teamService.saveTeam(team);
 		session.setAttribute("team", team);
+		
+		Member clen = (Member) session.getAttribute("member");
+		memberService.updateManagedTeams(clen.getMember_id(), team.getTeam_id());
 		return "team/registerSuccessful";
 		
 	}
