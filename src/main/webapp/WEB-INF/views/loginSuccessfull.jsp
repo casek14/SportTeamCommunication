@@ -15,6 +15,10 @@ Password: <c:out value="${sessionScope.member.password}" />
 
 <br /> <br />
 
- <td><a href="${ pageContext.request.contextPath }/member/logout">LOGOUT</a></td>  
+ <a href="${ pageContext.request.contextPath }/member/logout">LOGOUT</a>
+ 
+ <br /> <br />
+ 
+  <a href="${ pageContext.request.contextPath }/team/register">CREATE TEAM</a>
 </body>
 </html>

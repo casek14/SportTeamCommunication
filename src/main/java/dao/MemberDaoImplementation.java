@@ -86,17 +86,17 @@ public class MemberDaoImplementation implements MemberDao{
 	public void updateMemberAdministration(int memberID, int teamID) {
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
-		String getListOfTeams = "SELECT M.administrator from model.Member as M where M.member_id = :id";
-		String hql = "UPDATE model.Member as m set m.administrator= :admin where m.member_id = :id";
+		String selectMember = "from model.Member as m where m.member_id = :id";
 		
 		try {
-			Query q1 = session.createQuery(getListOfTeams);
-			q1.setInteger("id", memberID);
-			List<Integer> listOfTeams = (List<Integer>) q1.uniqueResult();
-			System.out.println(listOfTeams.toString());
-			Query q2 = session.createQuery(hql);
-			q2.setParameterList("admin", listOfTeams);
-			q2.setInteger("id", memberID);
+			
+			
+			Query q = session.createQuery(selectMember);
+			q.setInteger("id", memberID);
+			Member member = (Member) q.uniqueResult();
+			member.getAdministrator().add(teamID);
+			session.saveOrUpdate(member);
+			
 			tx.commit();
 			session.close();
 			
