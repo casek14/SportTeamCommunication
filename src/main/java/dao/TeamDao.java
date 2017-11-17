@@ -10,5 +10,7 @@ import model.Team;
 public interface TeamDao {
 	
 	public void saveTeam(Team team);
-	public List<Team> getAllTeams();
+	public List<Team> listAllTeams();
+	public List<Team> getmemberTeams(List<Integer> teams);
+	
 }

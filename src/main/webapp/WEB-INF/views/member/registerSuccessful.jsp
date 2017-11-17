@@ -21,5 +21,8 @@ Oblibene sporty jsou: ${member.favouriteSports }           <br />
 Adresa je: Ulice ${member.address.street } - ${member.address.cp }   <br />
 
 Mesto je: ${member.address.city } - PSC: ${member.address.postCode }
+
+
+
 </body>
 </html>

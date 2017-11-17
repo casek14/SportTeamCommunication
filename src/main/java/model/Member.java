@@ -10,6 +10,7 @@ import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,6 +20,7 @@ import javax.persistence.Table;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.transaction.annotation.Transactional;
 
 
 @Entity
@@ -44,7 +46,7 @@ public class Member {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int member_id;
 	
-	@ElementCollection
+	@ElementCollection(fetch=FetchType.EAGER)
 	@Column
 	private List<Integer> administrator; // this value say if the member is an administrator of the given team
 	

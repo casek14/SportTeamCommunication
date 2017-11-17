@@ -13,5 +13,6 @@
 Nazev tymu je ${team.name } <br />
 Popis tymu je ${team.description } <br />
 
+<tr><td><a href="${pageContext.request.contextPath }/team/list/admin ">List all teams of the logged user</a></td></tr>
 </body>
 </html>

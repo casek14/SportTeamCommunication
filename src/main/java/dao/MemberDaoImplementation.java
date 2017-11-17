@@ -95,8 +95,8 @@ public class MemberDaoImplementation implements MemberDao{
 			q.setInteger("id", memberID);
 			Member member = (Member) q.uniqueResult();
 			member.getAdministrator().add(teamID);
-			session.saveOrUpdate(member);
-			
+			session.merge(member);
+			session.flush();
 			tx.commit();
 			session.close();
 			

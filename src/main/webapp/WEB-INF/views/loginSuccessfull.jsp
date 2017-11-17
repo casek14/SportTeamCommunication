@@ -20,5 +20,7 @@ Password: <c:out value="${sessionScope.member.password}" />
  <br /> <br />
  
   <a href="${ pageContext.request.contextPath }/team/register">CREATE TEAM</a>
+  <br /> <br />
+  <a href="${pageContext.request.contextPath }/team/list/admin" >Tymy ktere muzu spravovat</a>
 </body>
 </html>
