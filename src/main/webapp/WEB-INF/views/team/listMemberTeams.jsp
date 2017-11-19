@@ -17,16 +17,26 @@
 <tr style="border: 1px solid black">
 <th style="border: 1px solid black">Team name</th>
 <th style="border: 1px solid black">Team description</th>
+<th style="border: 1px solid black"></th>
 </tr>
 <c:forEach var="team" items="${teams}" >
 <tr style="border: 1px solid black">
-<td style="border: 1px solid black"><c:out value="${team.name }"></c:out></td>
+<td style="border: 1px solid black">
+<a href="${pageContext.request.contextPath }/team/detail/${team.team_id}">
+<c:out value="${team.name }"></c:out>
+</a>
+</td>
 <td style="border: 1px solid black"><c:out value="${team.description }"></c:out></td>
+<td style="border: 1px solid black">
+<a href="${pageContext.request.contextPath }/team/manage/${team.team_id}">edit</a>
+</td>
+
 </tr>
-<tr></tr>
-<tr></tr><tr></tr>
+
 
 </c:forEach>
+<tr></tr>
+<tr></tr><tr></tr>
 </table>
 
 </body>

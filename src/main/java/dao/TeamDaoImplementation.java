@@ -88,7 +88,7 @@ public class TeamDaoImplementation implements TeamDao{
 			q.setParameterList("teams", teams);
 			selectedTeams = q.list();
 			
-			//tx.commit();
+			tx.commit();
 			session.close();
 		} catch (Exception e) {
 			tx.rollback();
@@ -96,6 +96,51 @@ public class TeamDaoImplementation implements TeamDao{
 			e.printStackTrace();
 		}
 		return selectedTeams;
+	}
+
+	@Override
+	public Team getTeamById(int id) {
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		String hql = "from model.Team where team_id= :id";
+		Team t = new Team();
+		
+		try {
+			Query q = session.createQuery(hql);
+			q.setInteger("id", id);
+			t =(Team) q.uniqueResult();
+			tx.commit();
+			session.close();
+		} catch (Exception e) {
+			tx.rollback();
+			session.close();
+			e.printStackTrace();
+		}
+		
+		return t;
+	}
+
+	@Override
+	public Team updateTeam(Team team) {
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		String hql = "from model.Team where team_id = :id";
+		Team t = new Team();
+		try {
+			Query q = session.createQuery(hql);
+			q.setInteger("id", team.getTeam_id());
+			t = (Team) q.uniqueResult();
+			t.setName(team.getName());
+			t.setDescription(team.getDescription());
+			session.saveOrUpdate(t);
+			tx.commit();
+			session.close();
+		} catch (Exception e) {
+			tx.rollback();
+			session.close();
+			e.printStackTrace();
+		}
+		return t;
 	}
 
 	

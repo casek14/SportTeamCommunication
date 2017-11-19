@@ -35,6 +35,16 @@ public class TeamServiceImplementation implements TeamService{
 		return teamDao.getmemberTeams(teams);
 	}
 
+	@Override
+	public Team getTeamById(int id) {
+		return teamDao.getTeamById(id);
+	}
+
+	@Override
+	public Team updateTeam(Team team) {
+		return teamDao.updateTeam(team);
+	}
+
 	
 	
 	

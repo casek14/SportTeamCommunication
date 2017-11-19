@@ -12,5 +12,7 @@ public interface TeamDao {
 	public void saveTeam(Team team);
 	public List<Team> listAllTeams();
 	public List<Team> getmemberTeams(List<Integer> teams);
+	public Team getTeamById(int id);
+	public Team updateTeam(Team team);
 	
 }

@@ -20,7 +20,11 @@
 </tr>
 <c:forEach var="team" items="${teams}" >
 <tr style="border: 1px solid black">
-<td style="border: 1px solid black"><c:out value="${team.name }"></c:out></td>
+<td style="border: 1px solid black">
+<a href="${pageContext.request.contextPath }/team/detail/${team.team_id}">
+<c:out value="${team.name }"></c:out>
+</a>
+</td>
 <td style="border: 1px solid black"><c:out value="${team.description }"></c:out></td>
 </tr>
 </c:forEach>
