@@ -32,6 +32,11 @@ public class MemberServiceImplementation implements MemberService{
 		memberDao.updateMemberAdministration(memberID, teamID);
 	}
 
+	@Override
+	public Member updateMember(Member member) {
+		return memberDao.updateMember(member);
+	}
+
 	
 	
 }

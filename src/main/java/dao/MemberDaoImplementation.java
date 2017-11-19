@@ -89,14 +89,11 @@ public class MemberDaoImplementation implements MemberDao{
 		String selectMember = "from model.Member as m where m.member_id = :id";
 		
 		try {
-			
-			
 			Query q = session.createQuery(selectMember);
 			q.setInteger("id", memberID);
 			Member member = (Member) q.uniqueResult();
 			member.getAdministrator().add(teamID);
 			session.merge(member);
-			session.flush();
 			tx.commit();
 			session.close();
 			
@@ -105,6 +102,39 @@ public class MemberDaoImplementation implements MemberDao{
 			session.close();
 			e.printStackTrace();
 		}
+		
+	}
+
+	@Override
+	public Member updateMember(Member member) {
+		
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		String selectMember = "from model.Member as m where m.member_id = :id";
+		try {
+			Query q = session.createQuery(selectMember);
+			q.setInteger("id", member.getMember_id());
+			
+			Member m = (Member) q.uniqueResult();
+			
+			//m.setAddress(member.getAddress());
+			m.setDateOfBirth(member.getDateOfBirth());
+			m.setFirstName(member.getFirstName());
+			m.setLastName(member.getLastName());
+			m.setFavouriteSports(member.getFavouriteSports());
+			m.setPhoneNumber(member.getPhoneNumber());
+			m.setPassword(member.getPassword());
+			session.saveOrUpdate(m);
+			tx.commit();
+			session.close();
+			
+		} catch (Exception e) {
+			tx.rollback();
+			session.close();
+			e.printStackTrace();
+		}
+		
+		return member;
 		
 	}
 	

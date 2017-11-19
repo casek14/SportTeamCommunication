@@ -72,14 +72,15 @@ private static final Logger logger = LoggerFactory.getLogger(HomeController.clas
 		
 		MemberValidation memberValidation = new MemberValidation();
 		memberValidation.validate(member, br);
-		if(br.hasErrors()) {
-			System.out.println("Mam problem");	
+		if(br.hasErrors()) {	
 			return "member/loginMember";
 			
 		}
+		
 		member = memberService.loginMember(member);
 		if(member != null) {
 			session.setAttribute("member", member);
+			System.out.println("ID pri loginu je: "+member.getMember_id());
 			return "loginSuccessfull";
 		}
 		
@@ -90,6 +91,36 @@ private static final Logger logger = LoggerFactory.getLogger(HomeController.clas
 	public String memberLogout(HttpSession session) {
 		session.invalidate();
 		return "home";
+	}
+	
+	@RequestMapping(value="/member/update",method=RequestMethod.GET)
+	public String updateMemberCredentials(ModelMap model, HttpSession session) {
+		Member member = (Member) session.getAttribute("member");
+	    if(member == null) {
+	    	model.put("memberData", new Member());
+	    	System.out.println("ID pred updatem je: "+member.getMember_id());
+	    	return "member/loginMember";
+	    }
+	    
+	    model.put("memberData", member);
+	    return "member/updateMember";
+	}
+	
+	@RequestMapping(value="/member/update",method=RequestMethod.POST)
+	public String doUpdateMemberCredentials(ModelMap model, HttpSession session, 
+			@ModelAttribute("memberData")  @Valid Member member, BindingResult br) {
+		System.out.println("ID je po UPDATU je: "+member.getMember_id());
+		MemberValidation memberValidation = new MemberValidation();
+		memberValidation.validate(member, br);
+		if(br.hasErrors()) {	
+			return "member/updateMember";
+			
+		}
+		
+		Member updatedMember = memberService.updateMember(member);
+		session.removeAttribute("member");
+		session.setAttribute("member", updatedMember);
+		return "member/updateSuccessful";
 	}
 
 }
