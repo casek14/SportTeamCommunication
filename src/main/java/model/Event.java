@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -11,7 +12,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
 
@@ -28,14 +32,25 @@ public class Event {
 	private int event_id;
 	
 	@Column
+	@NotEmpty
 	private String name;
 	
 	@Column
 	private String description;
 	
-	@Column
-	@DateTimeFormat(pattern="HH:mm-dd/MM/yyyy")
-	private String date;
+	/*
+	 * cas konani ve formatu HH:mm (17:45)
+	 */
+	@NotEmpty
+	@DateTimeFormat(pattern="HH:mm")
+	private Date time;
+	
+	/*
+	 *datum konani ve formatu dd/MM/yyyy (12/6/2017) 
+	 */
+	@NotEmpty	
+	@DateTimeFormat(pattern="dd/MM/yyyy")
+	private Date date;
 	
 	
 	@OneToMany
@@ -74,11 +89,21 @@ public class Event {
 		this.description = description;
 	}
 
-	public String getDate() {
+	
+
+	public Date getTime() {
+		return time;
+	}
+
+	public void setTime(Date time) {
+		this.time = time;
+	}
+
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 
@@ -88,6 +113,16 @@ public class Event {
 
 	public void setComments(List<Comment> comments) {
 		this.comments = comments;
+	}
+
+	
+
+	public List<Member> getLoggedUsers() {
+		return loggedUsers;
+	}
+
+	public void setLoggedUsers(List<Member> loggedUsers) {
+		this.loggedUsers = loggedUsers;
 	}
 	
 	

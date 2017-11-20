@@ -58,12 +58,7 @@ public class EventController {
 			return "event/createEvent";
 		}
 		
-		Date date = new Date();
-		String format = "HH:mm-dd/MM/yyyy";
-		DateFormat dateFormat = new SimpleDateFormat(format);
-		String formatedDate = dateFormat.format(date);
-		System.out.println("Time format je: "+formatedDate);
-		event.setDate(formatedDate);
+		
 		eventService.saveEvent(event);
 		teamService.addEventToTeam(t.getTeam_id(), event);
 		session.setAttribute("event", event);

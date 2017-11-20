@@ -30,6 +30,19 @@
   <td><s:errors path="description" cssStyle="color:red;" /></td>
   </tr>
   
+  <tr>
+  <td>Cas konani:</td>
+  <td><s:input path="time"/></td>
+  <td><s:errors path="time" cssStyle="color:red;" /></td>
+  </tr>
+  
+  <tr>
+  <td>Datum konani:</td>
+  <td><s:input path="date"/></td>
+  <td><s:errors path="date" cssStyle="color:red;" /></td>
+  </tr>
+  
+  
   <td></td>
   <td><input type="submit" value="Create"/></td>
   
