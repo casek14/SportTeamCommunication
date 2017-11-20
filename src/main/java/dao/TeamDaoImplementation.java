@@ -13,6 +13,7 @@ import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import model.Event;
 import model.Team;
 
 public class TeamDaoImplementation implements TeamDao{
@@ -141,6 +142,27 @@ public class TeamDaoImplementation implements TeamDao{
 			e.printStackTrace();
 		}
 		return t;
+	}
+
+	@Override
+	public void addEventToTeam(int teamID, Event event) {
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		String hql = "from model.Team where team_id = :id";
+		
+		try {
+			Query q = session.createQuery(hql);
+			q.setInteger("id", teamID);
+			Team t = (Team) q.uniqueResult();
+			t.getEvents().add(event);
+			session.saveOrUpdate(t);
+			tx.commit();
+			session.close();
+		} catch (Exception e) {
+			tx.rollback();
+			session.close();
+			e.printStackTrace();
+		}
 	}
 
 	

@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 
 @Entity
@@ -31,6 +34,7 @@ public class Event {
 	private String description;
 	
 	@Column
+	@DateTimeFormat(pattern="HH:mm-dd/MM/yyyy")
 	private String date;
 	
 	

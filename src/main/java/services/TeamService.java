@@ -2,6 +2,7 @@ package services;
 
 import java.util.List;
 
+import model.Event;
 import model.Team;
 
 public interface TeamService {
@@ -12,4 +13,5 @@ public interface TeamService {
 	public List<Team> getMemberTeams(List<Integer> teams);
 	public Team getTeamById(int id);
 	public Team updateTeam(Team team);
+	public void addEventToTeam(int teamID, Event event);
 }

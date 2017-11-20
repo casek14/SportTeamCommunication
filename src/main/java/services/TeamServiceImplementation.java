@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.transaction.annotation.Transactional;
 
 import dao.TeamDao;
+import model.Event;
 import model.Team;
 
 public class TeamServiceImplementation implements TeamService{
@@ -43,6 +44,11 @@ public class TeamServiceImplementation implements TeamService{
 	@Override
 	public Team updateTeam(Team team) {
 		return teamDao.updateTeam(team);
+	}
+
+	@Override
+	public void addEventToTeam(int teamID, Event event) {
+		teamDao.addEventToTeam(teamID, event);
 	}
 
 	

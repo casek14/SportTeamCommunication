@@ -18,7 +18,14 @@ Popis
 <br />
 <c:if test="${admin == true}">
 <a href="${pageContext.request.contextPath }/team/manage/${team.team_id } ">Manage Team</a>
+<a href="${pageContext.request.contextPath }/event/create">Create Event</a>
 </c:if>
-
+<br />
+SEZNAM EVENTU:
+<br />
+<c:forEach var="event" items="${team.events }">
+<a href="/event/list/${event.event_id }">${event.name } v case: ${event.date }</a>
+<br />
+</c:forEach>
 </body>
 </html>
