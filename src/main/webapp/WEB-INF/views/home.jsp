@@ -8,7 +8,7 @@
 <body>
 
   <div align="center">
-  <h1>Hovno</h1>
+  <h1>TEST</h1>
   
   <table>
     <tr><td><a href="${pageContext.request.contextPath }/member/register">Register member</a></td></tr>
