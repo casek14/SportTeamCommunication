@@ -92,12 +92,12 @@ public class TestController {
 		comment3.setText("Nein");
 		
 		
-		event.setDate("15:00/7/10/2017");
+		//event.setDate("15:00/7/10/2017");
 		event.setDescription("Football match with Czech Republic");
 		event.setName("INTERNATIONAL FOOTBALL MATCH");
 	    event.getComments().add(comment);
 	    event.getComments().add(comment1);
-	    event1.setDate("15:00/7/8/2017");
+	    //event1.setDate("15:00/7/8/2017");
 		event1.setDescription("Prague Marathon");
 		event1.setName("Long run");
 	    event1.getComments().add(comment2);
