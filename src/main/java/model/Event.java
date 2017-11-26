@@ -7,13 +7,16 @@ import java.util.regex.Pattern;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.CascadeType;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -41,16 +44,16 @@ public class Event {
 	/*
 	 * cas konani ve formatu HH:mm (17:45)
 	 */
-	@NotEmpty
+	
 	@DateTimeFormat(pattern="HH:mm")
-	private Date time;
+	private String time;
 	
 	/*
 	 *datum konani ve formatu dd/MM/yyyy (12/6/2017) 
 	 */
-	@NotEmpty	
+		
 	@DateTimeFormat(pattern="dd/MM/yyyy")
-	private Date date;
+	private String date;
 	
 	
 	@OneToMany
@@ -61,7 +64,7 @@ public class Event {
 	 * uzivatele kteri se prihlasili na danou udalost
 	 * neboli odklikli ze se dane udalosti zucastni
 	 */
-	@ManyToMany(mappedBy="events")
+	@ManyToMany(fetch=FetchType.EAGER)
 	private List<Member> loggedUsers = new ArrayList<Member>();
 	
 	
@@ -91,19 +94,19 @@ public class Event {
 
 	
 
-	public Date getTime() {
+	public String getTime() {
 		return time;
 	}
 
-	public void setTime(Date time) {
+	public void setTime(String time) {
 		this.time = time;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 

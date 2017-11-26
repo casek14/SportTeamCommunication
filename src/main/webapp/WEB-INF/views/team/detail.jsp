@@ -24,7 +24,7 @@ Popis
 SEZNAM EVENTU:
 <br />
 <c:forEach var="event" items="${team.events }">
-<a href="/event/list/${event.event_id }">${event.name } v case: ${event.date }</a>
+<a href="${pageContext.request.contextPath }/event/detail/${event.event_id }">${event.name } v case: ${event.date }</a>
 <br />
 </c:forEach>
 </body>

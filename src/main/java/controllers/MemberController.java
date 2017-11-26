@@ -98,7 +98,6 @@ private static final Logger logger = LoggerFactory.getLogger(HomeController.clas
 		Member member = (Member) session.getAttribute("member");
 	    if(member == null) {
 	    	model.put("memberData", new Member());
-	    	System.out.println("ID pred updatem je: "+member.getMember_id());
 	    	return "member/loginMember";
 	    }
 	    

@@ -39,7 +39,7 @@ public class Member {
 	/**
 	 * udalosti na ktere se dany user prihlasil
 	 */
-	@ManyToMany
+	@ManyToMany(mappedBy="loggedUsers")
 	private List<Event> events = new ArrayList<Event>();
 	
 	@Id
@@ -162,13 +162,7 @@ public class Member {
 		this.teams = teams;
 	}
 
-	public List<Event> getEvents() {
-		return events;
-	}
 
-	public void setEvents(List<Event> events) {
-		this.events = events;
-	}
 
 	public Date getDateOfBirth() {
 		return dateOfBirth;

@@ -13,10 +13,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import model.Event;
+import model.Member;
 import model.Team;
 import services.EventService;
 import services.TeamService;
@@ -66,6 +68,44 @@ public class EventController {
 		session.removeAttribute("team");
 		session.setAttribute("team", t);
 		return "event/creationSuccessful";
+	}
+	
+	@RequestMapping(value="/event/detail/{id}")
+	public String showEventDetail(@PathVariable(value="id") final int id, HttpSession session ) {
+		Member member = (Member) session.getAttribute("member");
+		if(member == null) {
+	    	return "member/loginMember";
+	    }
+		
+		Event e = (Event) eventService.getEventById(id);
+		if(e == null) return "notFound";
+		session.removeAttribute("event");
+		session.setAttribute("event", e);
+		
+		return "event/eventDetail";
+	}
+	
+	/**
+	 * Pihlaseni uzivatele na konkretni udalost
+	 * @param session
+	 * @return
+	 */
+	@RequestMapping(value="/event/attend/{id}")
+	public String attendEvent(@PathVariable(value="id") final int id,  HttpSession session) {
+		
+		Member member = (Member) session.getAttribute("member");
+		if(member == null) {
+	    	return "member/loginMember";
+	    }
+		
+		eventService.addMemberToEvent(member, id);
+		session.removeAttribute("event");
+		Event e = eventService.getEventById(id);
+		if(e == null) return "notFound";
+		
+		session.setAttribute("event", e);
+		System.out.println("event/eventDetail/"+e.getEvent_id());
+		return "redirect:/event/detail/"+e.getEvent_id();
 	}
 	
 }
