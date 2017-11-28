@@ -1,0 +1,35 @@
+html, body {
+}
+.card {
+  margin-bottom: 3rem;
+}
+
+
+.navbar-height{
+  margin-bottom: 5rem;  
+}
+.have-botgap {
+  margin-bottom: 3rem;
+}.have-botpgap {
+  padding-bottom: 3rem;
+}
+.content-wrapper {
+  margin-top: 3rem;
+}
+.hovno {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  
+}
+.card-footer-item {
+  font-size: 12px;
+  font-weight: bold;
+  color: #666;
+}
+.card-header-title {
+  display: block;
+}
+.card-content p {
+  margin-bottom: 2rem;
+}
+
