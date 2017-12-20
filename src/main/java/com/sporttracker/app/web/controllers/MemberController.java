@@ -25,6 +25,8 @@ import com.sporttracker.app.web.validation.MemberValidation;
  *
  */
 @Controller
+@RequestMapping("/member")
+
 public class MemberController {
 
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
@@ -33,7 +35,7 @@ public class MemberController {
 	private MemberService memberService;
 
 	@RequestMapping("/register")
-	public ModelAndView hovno() {
+	public ModelAndView memberRegistration() {
 		ModelAndView model = new ModelAndView("memberRegistration");
 		model.addObject("memberData", new Member());
 		return model;
