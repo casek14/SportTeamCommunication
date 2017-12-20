@@ -21,12 +21,6 @@ public class HomeController {
 		return model;
 	}
 
-	@RequestMapping("/faq")
-	public ModelAndView faq() {
-		ModelAndView model = new ModelAndView("faq");
-		return model;
-	}
-
 	@RequestMapping("/curses")
 	public ModelAndView curses() {
 		ModelAndView model = new ModelAndView("curses");
@@ -45,15 +39,15 @@ public class HomeController {
 		return model;
 	}
 
-	@RequestMapping("/about")
-	public ModelAndView about() {
-		ModelAndView model = new ModelAndView("about");
+	@RequestMapping("/faq")
+	public ModelAndView faq() {
+		ModelAndView model = new ModelAndView("faq");
 		return model;
 	}
 
-	@RequestMapping("/login")
-	public ModelAndView login() {
-		ModelAndView model = new ModelAndView("login");
+	@RequestMapping("/about")
+	public ModelAndView about() {
+		ModelAndView model = new ModelAndView("about");
 		return model;
 	}
 

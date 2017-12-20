@@ -12,7 +12,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.sporttracker.app.web.model.Member;
 import com.sporttracker.app.web.services.MemberService;
@@ -25,7 +24,7 @@ import com.sporttracker.app.web.validation.MemberValidation;
  *
  */
 @Controller
-@RequestMapping("/member")
+// @RequestMapping("/member")
 
 public class MemberController {
 
@@ -34,13 +33,11 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 
-	@RequestMapping("/register")
-	public ModelAndView memberRegistration() {
-		ModelAndView model = new ModelAndView("memberRegistration");
-		model.addObject("memberData", new Member());
-		return model;
-	}
-
+	/*
+	 * @RequestMapping("/register") public ModelAndView memberRegistration() {
+	 * ModelAndView model = new ModelAndView("memberRegistration");
+	 * model.addObject("memberData", new Member()); return model; }
+	 */
 	@RequestMapping(value = "/member/register", method = RequestMethod.GET)
 	public String showRegisterMemberForm(ModelMap model) {
 		model.put("memberData", new Member());
@@ -73,7 +70,7 @@ public class MemberController {
 		return "loginSuccessfull";
 	}
 
-	@RequestMapping(value = "/member/login", method = RequestMethod.POST)
+	@RequestMapping(value = "member/login", method = RequestMethod.POST)
 	public String doLogin(ModelMap model, HttpSession session, @ModelAttribute("memberData") Member member,
 			BindingResult br) {
 
@@ -121,7 +118,6 @@ public class MemberController {
 		memberValidation.validate(member, br);
 		if (br.hasErrors()) {
 			return "member/updateMember";
-
 		}
 
 		Member updatedMember = memberService.updateMember(member);
@@ -129,5 +125,4 @@ public class MemberController {
 		session.setAttribute("member", updatedMember);
 		return "member/updateSuccessful";
 	}
-
 }

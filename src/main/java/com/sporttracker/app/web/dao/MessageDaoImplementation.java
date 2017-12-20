@@ -1,11 +1,16 @@
 package com.sporttracker.app.web.dao;
 
+import javax.transaction.Transactional;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Repository;
 
 import com.sporttracker.app.web.model.Message;
 
+@Repository
+@Transactional
 public class MessageDaoImplementation implements MessageDao {
 
 	private SessionFactory sessionFactory;

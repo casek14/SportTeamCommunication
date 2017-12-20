@@ -1,12 +1,17 @@
 package com.sporttracker.app.web.dao;
 
+import javax.transaction.Transactional;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.sporttracker.app.web.model.Comment;
 
+@Repository
+@Transactional
 public class CommentDaoImplementation implements CommentDao {
 
 	@Autowired

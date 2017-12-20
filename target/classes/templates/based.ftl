@@ -6,7 +6,6 @@
         <@layout.block name="head">
         	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
-        	<link href="<c:url value="resources/static/css/style.css" />" rel="stylesheet" type="text/css" />
             <link rel="stylesheet" type="text/css" href='resources/static/css/style.css'/>
         	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 
@@ -49,7 +48,7 @@
                 </div>
                 <div class="navbar-item">
                     <p class="control">
-                        <a class="button" href="login.html">
+                        <a class="button" href="member/login">
                             <span class="icon">
                                <i class="fa fa-user"></i>
                                </span>

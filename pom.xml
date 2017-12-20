@@ -17,6 +17,7 @@
 		<org.slf4j-version>1.7.12</org.slf4j-version>
 	</properties>
 
+
 	<dependencies>
 		<dependency>
 			<groupId>kr.pe.kwonnam.freemarker</groupId>
@@ -28,12 +29,30 @@
 	        <groupId>org.springframework.boot</groupId>
 	        <artifactId>spring-boot-starter-tomcat</artifactId>
 		</dependency>
-		<!-- Hibernate -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>5.2.12.Final</version>
+<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+
+	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-core</artifactId>
+    <version>5.2.10.Final</version>
+</dependency>
+	
+	
+	
+	<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
 		</dependency>
+		
+
+
+	<dependency>
+     <groupId>org.springframework.boot</groupId>
+     <artifactId>spring-boot-starter-data-jpa</artifactId>
+   </dependency>
+
+
 
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
 		<dependency>

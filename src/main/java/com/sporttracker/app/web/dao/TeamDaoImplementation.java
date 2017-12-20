@@ -11,10 +11,13 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.sporttracker.app.web.model.Event;
 import com.sporttracker.app.web.model.Team;
 
+@Repository
+@Transactional
 public class TeamDaoImplementation implements TeamDao {
 
 	@Autowired
