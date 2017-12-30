@@ -1,5 +1,7 @@
 package com.sporttracker.app.web.config;
 
+import java.util.Properties;
+
 import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
@@ -42,21 +44,15 @@ public class SpringJDBCConfiguration {
 	public LocalSessionFactoryBean sessionFactory() {
 		LocalSessionFactoryBean sessionFactoryBean = new LocalSessionFactoryBean();
 		sessionFactoryBean.setDataSource(dataSource());
-		sessionFactoryBean.setPackagesToScan(new String[] { "com.sporttracker.app.web.model" });
-		// sessionFactoryBean.setHibernateProperties(hibernateProperties() );
+		sessionFactoryBean.setPackagesToScan("com.sporttracker");
+		Properties hibernateProperties = new Properties();
+		hibernateProperties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+		hibernateProperties.put("hibernate.show_sql", "true");
+		hibernateProperties.put("hibernate.hbm2ddl.auto", "create");
+		sessionFactoryBean.setHibernateProperties(hibernateProperties);
+
 		return sessionFactoryBean;
-
 	}
-
-	/*
-	 * # TODO (neni potreba zatim) public Properties hibernateProperties() { return
-	 * new Properties() { { setProperty("hibernate.hbm2ddl.auto",
-	 * env.getProperty("datasource.ddl-auto")); setProperty("hibernate.dialect",
-	 * env.getProperty("datasource.hibernate.dialect"));
-	 * setProperty("hibernate.show_sql", env.getProperty("datasource.show-sql"));
-	 * setProperty("hibernate.format_sql",
-	 * env.getProperty("datasource.format-sql")); } }; }
-	 */
 
 	@Bean
 	public HibernateTransactionManager transactionManager() {
