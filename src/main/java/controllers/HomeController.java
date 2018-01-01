@@ -35,11 +35,36 @@ public class HomeController {
 	
 	
 	
-	@RequestMapping(value="/home/test",method=RequestMethod.GET)
-	public String showTest(ModelMap model) {
-		return "home/test";
+	@RequestMapping(value="/home/faq",method=RequestMethod.GET)
+	public String showFaq(ModelMap model) {
+		return "home/faq";
 	}
 	
+	@RequestMapping(value="/home/about",method=RequestMethod.GET)
+	public String showAbout(ModelMap model) {
+		return "home/about";
+	}
+	
+	@RequestMapping(value="/home/curses",method=RequestMethod.GET)
+	public String showCurses(ModelMap model) {
+		return "home/curses";
+	}
+	
+	@RequestMapping(value="/home/trainers",method=RequestMethod.GET)
+	public String showTrainers(ModelMap model) {
+		return "home/trainers";
+	}
+	
+	@RequestMapping(value="/home/trainings",method=RequestMethod.GET)
+	public String showTrainings(ModelMap model) {
+		return "home/trainings";
+	}
+
+	
+	@RequestMapping(value="/home/index",method=RequestMethod.GET)
+	public String indexs(ModelMap model) {
+		return "home/index";
+	}
 
 	
 	

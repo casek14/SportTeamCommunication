@@ -18,7 +18,7 @@
     <tr><td><a href="${pageContext.request.contextPath }/team/list ">List all teams</a></td></tr>
     <tr><td><a href="${pageContext.request.contextPath }/team/list/admin ">List all teams of the logged user</a></td></tr>
   
-      <tr><td><a href="${pageContext.request.contextPath }/home/test ">Lisfdafasfsadft all teams</a></td></tr>
+      <tr><td><a href="${pageContext.request.contextPath }/home/faq ">Lisfdafasfsadft all teams</a></td></tr>
   
   </table>
   
