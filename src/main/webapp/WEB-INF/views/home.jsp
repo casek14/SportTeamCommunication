@@ -4,6 +4,7 @@
 <html>
 <head>
 	<title>Home</title>
+	 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/member/hovno.css">
 </head>
 <body>
 
@@ -16,8 +17,12 @@
     <tr><td><a href="${pageContext.request.contextPath }/team/register ">Create team</a></td></tr>
     <tr><td><a href="${pageContext.request.contextPath }/team/list ">List all teams</a></td></tr>
     <tr><td><a href="${pageContext.request.contextPath }/team/list/admin ">List all teams of the logged user</a></td></tr>
+  
+      <tr><td><a href="${pageContext.request.contextPath }/home/test ">Lisfdafasfsadft all teams</a></td></tr>
+  
   </table>
   
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </div>
 
 </body>
