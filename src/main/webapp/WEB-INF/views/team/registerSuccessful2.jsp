@@ -8,8 +8,11 @@
 </head>
 <body>
 
+<h1>Creation of team successful !!!</h1>
 
-<h1>Wellcome to the test page. Please check you console, there should be some testing output</h1>
+Nazev tymu je ${team.name } <br />
+Popis tymu je ${team.description } <br />
 
+<tr><td><a href="${pageContext.request.contextPath }/team/list/admin ">List all teams of the logged user</a></td></tr>
 </body>
 </html>

@@ -33,8 +33,6 @@ public class HomeController {
 		return "home";
 	}
 	
-	
-	
 	@RequestMapping(value="/home/faq",method=RequestMethod.GET)
 	public String showFaq(ModelMap model) {
 		return "home/faq";
@@ -59,15 +57,4 @@ public class HomeController {
 	public String showTrainings(ModelMap model) {
 		return "home/trainings";
 	}
-
-	
-	@RequestMapping(value="/home/index",method=RequestMethod.GET)
-	public String indexs(ModelMap model) {
-		return "home/index";
-	}
-
-	
-	
-	
-	
 }

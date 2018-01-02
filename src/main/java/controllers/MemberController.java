@@ -93,6 +93,11 @@ private static final Logger logger = LoggerFactory.getLogger(HomeController.clas
 		return "home";
 	}
 	
+	@RequestMapping(value="/member/mailMember",method=RequestMethod.GET)
+	public String memberMail(HttpSession session) {
+		return "/member/mailMember";
+	}
+	
 	@RequestMapping(value="/member/update",method=RequestMethod.GET)
 	public String updateMemberCredentials(ModelMap model, HttpSession session) {
 		Member member = (Member) session.getAttribute("member");

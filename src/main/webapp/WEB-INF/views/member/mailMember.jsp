@@ -1,10 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="s" %>
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,13 +13,13 @@
     <nav class="navbar">
         <div class="container">
             <div class="navbar-brand">
-                <a class="navbar-item" href="../">
+                <a class="navbar-item" href="#">
                     <h1 class="title"> Sporitfy</h1>
                     <br />
                     <h4 class="subtitle">  Stay connected</h4>
                 </a>
                 <span class="navbar-burger burger" data-target="navbarMenu">
-                <span></span>
+                      <span></span>
                 <span></span>
                 <span></span>
                 </span>
@@ -48,66 +44,35 @@
                 </div>
                 <div class="navbar-item">
                     <p class="control">
-                            <div class="dropdown">
-                                    <div class="dropdown-trigger">
-                                      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                                        <span>${member.firstName}.${member.lastName}</span>
-                                        <span class="icon is-small">
-                                          <i class="fa fa-user" aria-hidden="true"></i>
-                                        </span>
-                                      </button>
-                                    </div>
-                                    <div class="dropdown-menu" id="dropdown-menu" role="fmenu">
-                                      <div class="dropdown-content">
-                                        <a href="${pageContext.request.contextPath}/team/register" class="dropdown-item">
-                                          Create team
-                                        </a>
-                                        <a href="${pageContext.request.contextPath}/team/list/admin" class="dropdown-item">
-                                          List of teams
-                                        </a>
-                                        <hr class="dropdown-divider">
-                                        <a href="${pageContext.request.contextPath}/member/update" class="dropdown-item">
-                                            Edit profile
-                                        </a>
-                                        <a href="${pageContext.request.contextPath}/member/logout" class="dropdown-item">
-                                          Log out
-                                        </a>
-                                      </div>
-                                    </div>
-                                  </div>
-
+                        <a class="button" href="${pageContext.request.contextPath }/member/login">
+                            <span class="icon">
+                               <i class="fa fa-user"></i>
+                               </span>
+                            <span>Login</span>
+                        </a>
                     </p>
                 </div>
-                
             </div>
         </div>
-    </nav> 
+    </nav>
     <section class="hero">
         <div class="hero-body">
             <div class="container has-text-centered">
                 <div class="column is-4 is-offset-4">
-                    <h3 class="title">Register your team</h3>
-                    <p class="subtitle has-text-grey">Please fill your creadentials for team registration.</p>
-                    <s:form  commandName="teamData"
-  action="${pageContext.request.contextPath }/team/register" method="post">
+                    <h3 class="title">Forgot password</h3>
+                    <p class="subtitle has-text-grey">Did you forggot your password?</p>
+                    <form>
                         <div class="field">
                             <div class="control">
-                                <s:input class="input is-large" path="name" type="text" placeholder="Name of team" autofocus="" />
-                                <s:errors path="name" cssStyle="color:red;" />
+                                <input class="input is-large" type="email" placeholder="Your Email" autofocus="">
                             </div>
                         </div>
-                        <div class="field">
-                            <div class="control">
-                                <s:input class="input is-large" path="description" type="text" placeholder="Description of your team" />
-                                <s:errors path="description" cssStyle="color:red;" />
-                            </div>
-                        </div>
-                        <input class="button is-block is-info is-large" type="submit" value="Create team!"/>
-                    </s:form>
+                        <a class="button is-block is-info is-large">Restore your password.</a>
+                    </form>
                 </div>
             </div>
         </div>
-    </section>
+    </section>             
     <footer class="footer">
         <div class="container">
             <div class="columns">
@@ -154,7 +119,8 @@
             </div>
         </div>
     </footer>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" />
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" />
+    
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bulma.js"></script>
  	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/custom.js"></script>
 	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
