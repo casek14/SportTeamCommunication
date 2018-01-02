@@ -31,6 +31,11 @@ public class EventServiceImplementation implements EventService{
 		eventDao.addMemberToEvent(member, eventID);
 	}
 
+	@Override
+	public void removeMemberFromEvent(Member member, int eventID) {
+		eventDao.removeMemberFromEvent(member, eventID);
+	}
+
 	
 
 }
