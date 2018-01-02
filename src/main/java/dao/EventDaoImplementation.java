@@ -1,6 +1,7 @@
 package dao;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -79,8 +80,6 @@ public class EventDaoImplementation implements EventDao{
 			event = (Event) q.uniqueResult();
 			
 		if(! isMemberAlreadyLogged(event.getLoggedUsers(), member)) {
-				
-			System.out.println("Pridavam noveho usera a eventID je: "+eventID);
 			event.getLoggedUsers().add(member);
 			
 		}
@@ -107,6 +106,46 @@ public class EventDaoImplementation implements EventDao{
 		}
 		
 		return false;
+	}
+
+	@Override
+	public void removeMemberFromEvent(Member member, int eventID) {
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		String hql = "from model.Event as e where e.event_id = :id";
+		Event event = new Event();
+		
+		try {
+			Query q = session.createQuery(hql);
+			q.setInteger("id", eventID);
+			event = (Event) q.uniqueResult();
+			
+		if(isMemberAlreadyLogged(event.getLoggedUsers(), member)) {
+			System.out.println("Odebiram membera z listu !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+			
+
+
+			Iterator<Member> it = event.getLoggedUsers().iterator();
+			while (it.hasNext()) {
+				Member m = it.next();
+				if (m.getMember_id() == (member.getMember_id())) {
+					it.remove();
+					System.out.println("ODEBIRAM POMOCI ITERATORU |||||||||||||");
+				}
+			}
+
+
+		}
+			session.saveOrUpdate(event);
+			tx.commit();
+			session.close();
+			
+			
+		} catch (Exception e) {
+			tx.rollback();
+			session.close();
+			e.printStackTrace();
+		}
 	}
 	
 }

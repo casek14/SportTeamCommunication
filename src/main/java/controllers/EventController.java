@@ -104,7 +104,29 @@ public class EventController {
 		if(e == null) return "notFound";
 		
 		session.setAttribute("event", e);
-		System.out.println("event/eventDetail/"+e.getEvent_id());
+		return "redirect:/event/detail/"+e.getEvent_id();
+	}
+	
+	/**
+	 * Odhlaseni uzivatele z konkretni udalosti
+	 * @param session
+	 * @return
+	 */
+	@RequestMapping(value="/event/notattend/{id}")
+	public String notattendEvent(@PathVariable(value="id") final int id,  HttpSession session) {
+		
+		Member member = (Member) session.getAttribute("member");
+		if(member == null) {
+	    	return "member/loginMember";
+	    }
+		
+		eventService.removeMemberFromEvent(member, id);
+		session.removeAttribute("event");
+		Event e = eventService.getEventById(id);
+		if(e == null) return "notFound";
+		
+		session.setAttribute("event", e);
+		System.out.println("Pocet memberu je: "+e.getLoggedUsers().toString());
 		return "redirect:/event/detail/"+e.getEvent_id();
 	}
 	
