@@ -86,7 +86,7 @@
          <div class="hero-body">
             <div class="container has-text-centered">
                <div class="column is-4 is-offset-4">
-                  <h3 class="title">Sign UP</h3>
+                  <h3 class="title">Update</h3>
                   <p class="subtitle has-text-grey">Please give us your information.</p>
                   <s:form  commandName="memberData" action="${pageContext.request.contextPath}/member/register" method="post">                    
 
@@ -152,7 +152,7 @@
                            <s:errors path="password" cssStyle="color:red;" />
                         </div>
                      </div>
-                        <input class="button is-block is-info is-large" type="submit" value="Register"/>
+                        <input class="button is-block is-info is-large" type="submit" value="Update"/>
                   </s:form>
                </div>
             </div>
