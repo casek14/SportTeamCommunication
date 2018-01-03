@@ -88,13 +88,16 @@
                      <th><abbr title="Position">Team Name</abbr></th>
                      <th>Team description</th>
                      <th>Edit</th>
+                     <th>Delete</th>                  
                   </tr>
                </thead>
                <tfoot>
                   <tr>
                      <th><abbr title="Position">Team Name</abbr></th>
                      <th>Team description</th>
-                     <th>Edit</th>                    
+                     <th>Edit</th>    
+                     <th>Delete</th>                    
+                                     
                   </tr>
                </tfoot>
                <tbody>
@@ -109,8 +112,11 @@
                             <c:out value="${team.description }"></c:out>
                         </td>
                         <td>
-                        <a href="${pageContext.request.contextPath }/team/manage/${team.team_id}">edit</a>
+                        	<a href="${pageContext.request.contextPath }/team/manage/${team.team_id}">Edit</a>
                         </td>
+                        <td>
+                        	<a href="#">Delete</a>
+                        </td>                        
                   </tr>
                   </c:forEach>
                </tbody>

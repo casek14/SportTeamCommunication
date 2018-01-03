@@ -85,18 +85,17 @@
          <br />
           <h4>Description:</h4>
          <p class="subtitle">${team.description}</p>
-         <c:out value="${admin}"></c:out>
          <br />
          <c:if test="${admin == true}">
-            <table class="table is-bordered">
+            <table class="table">
                <tbody>
                   <tr>
-                     <th>
-                        <a href="${pageContext.request.contextPath }/team/manage/${team.team_id } ">Manage Team</a>
-                     </th>
-                     <th>
-                        <a href="${pageContext.request.contextPath }/event/create">Create Event</a>
-                     </th>
+                     <td>
+                        <a class="button is-block is-warning"	href="${pageContext.request.contextPath }/team/manage/${team.team_id } ">Manage Team</a>
+                     </td>
+                     <td>
+                        <a class="button is-block is-success" href="${pageContext.request.contextPath }/event/create">Create Event</a>
+                     </td>
                   </tr>
                </tbody>
             </table>

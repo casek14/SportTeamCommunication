@@ -78,7 +78,7 @@
                     </p>
 
                </div>
-            </div>
+             </div>
          </div>
       </nav>
       <div class="container">
@@ -97,9 +97,12 @@
 
         <a class="button is-block is-info is-large" href="${pageContext.request.contextPath }/event/attend/${event.event_id}" >Join a event</a>
         <br />
-        <a class="button is-block is-danger is-large" href="${pageContext.request.contextPath }/event/attend/${event.event_id}" >Logout event</a>
-        
-
+        <a class="button is-block is-danger is-large" href="${pageContext.request.contextPath }/event/notattend/${event.event_id}" >Logout event</a>
+        <br />
+        <c:if test="${admin == true}">
+        <a class="button is-block is-danger is-large" href="${pageContext.request.contextPath }/event/delete/${team.team_id}/${event.event_id}" >Delete event</a>
+        </c:if>
+     
         <h4>List of sportsman:</h4>
         <ul>
             <c:forEach var="member" items="${event.loggedUsers }">

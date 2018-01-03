@@ -86,7 +86,7 @@
                   <h3 class="title">Update of team successful!</h3>
                   <p class="subtitle has-text-grey">Update of team ${team.name} successful!</p>                
                     <b>Name:</b> <p>${team.name}</p>
-                    <b>Description:</b> <p>${member.lastName}</p>
+                    <b>Description:</b> <p>${team.description}</p>
                </div>
             </div>
          </div>

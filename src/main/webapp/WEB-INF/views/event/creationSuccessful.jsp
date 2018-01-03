@@ -86,6 +86,7 @@
                   <p class="subtitle has-text-grey">Your event was created successfuly!</p>                
                     <b>Name of event:</b> <p>${event.name}</p>
                     <b>Description:</b> <p>${event.description}</p>
+                    <b>Date:</b> <p>${event.date}</p>
                </div>
             </div>
          </div>
