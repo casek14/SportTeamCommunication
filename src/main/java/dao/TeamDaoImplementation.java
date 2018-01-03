@@ -1,6 +1,7 @@
 package dao;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.hibernate.CacheMode;
@@ -14,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import model.Event;
+import model.Member;
 import model.Team;
 
 public class TeamDaoImplementation implements TeamDao{
@@ -156,6 +158,36 @@ public class TeamDaoImplementation implements TeamDao{
 			Team t = (Team) q.uniqueResult();
 			t.getEvents().add(event);
 			session.saveOrUpdate(t);
+			tx.commit();
+			session.close();
+		} catch (Exception e) {
+			tx.rollback();
+			session.close();
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void removeEvent(int teamID, int eventID) {
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		String hql = "from model.Team where team_id = :id";
+		
+		try {
+			Query q = session.createQuery(hql);
+			q.setInteger("id", teamID);
+	        Team t = (Team) q.uniqueResult();
+	        
+	        Iterator<Event> it = t.getEvents().iterator();
+			while (it.hasNext()) {
+				Event e = it.next();
+				if (e.getEvent_id() == eventID) {
+					it.remove();
+				}
+			}
+	        
+	        
+	        
 			tx.commit();
 			session.close();
 		} catch (Exception e) {

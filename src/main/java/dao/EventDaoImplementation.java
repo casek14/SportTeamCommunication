@@ -121,16 +121,12 @@ public class EventDaoImplementation implements EventDao{
 			event = (Event) q.uniqueResult();
 			
 		if(isMemberAlreadyLogged(event.getLoggedUsers(), member)) {
-			System.out.println("Odebiram membera z listu !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-			
-
 
 			Iterator<Member> it = event.getLoggedUsers().iterator();
 			while (it.hasNext()) {
 				Member m = it.next();
 				if (m.getMember_id() == (member.getMember_id())) {
 					it.remove();
-					System.out.println("ODEBIRAM POMOCI ITERATORU |||||||||||||");
 				}
 			}
 
@@ -146,6 +142,26 @@ public class EventDaoImplementation implements EventDao{
 			session.close();
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public void deleteEvent(int eventID) {
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		String hql = "delete from model.Event as e where e.event_id = :id";
+		
+		try {
+			Query q = session.createQuery(hql);
+			q.setInteger("id", eventID);
+			q.executeUpdate();
+			tx.commit();
+			session.close();
+		} catch (Exception e) {
+			tx.rollback();
+			session.close();
+			e.printStackTrace();
+		}
+		
 	}
 	
 }

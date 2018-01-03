@@ -51,6 +51,11 @@ public class TeamServiceImplementation implements TeamService{
 		teamDao.addEventToTeam(teamID, event);
 	}
 
+	@Override
+	public void removeEventFromTeam(int teamID, int eventID) {
+		teamDao.removeEvent(teamID, eventID);
+	}
+
 	
 	
 	

@@ -14,4 +14,5 @@ public interface TeamService {
 	public Team getTeamById(int id);
 	public Team updateTeam(Team team);
 	public void addEventToTeam(int teamID, Event event);
+	public void removeEventFromTeam(int teamID, int eventID);
 }

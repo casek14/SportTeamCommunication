@@ -16,6 +16,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -32,6 +33,7 @@ public class Event {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Cascade(CascadeType.DELETE)
 	private int event_id;
 	
 	@Column
