@@ -11,5 +11,6 @@ public interface EventDao {
 	public Event getEventById(int id);
 	public void addMemberToEvent(Member member,int eventID);
 	public void removeMemberFromEvent(Member member, int eventID);
+	public void deleteEvent(int eventID);
 	
 }

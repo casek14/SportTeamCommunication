@@ -130,4 +130,25 @@ public class EventController {
 		return "redirect:/event/detail/"+e.getEvent_id();
 	}
 	
+	/**
+	 * Smazani udalosti
+	 * @param session
+	 * @return
+	 */
+	@RequestMapping(value="/event/delete/{teamID}/{id}")
+	public String deleteEvent(@PathVariable(value="id") final int id, 
+			                  @PathVariable(value="teamID") final int teamID,
+			                  HttpSession session) {
+		
+		Member member = (Member) session.getAttribute("member");
+		if(member == null) {
+	    	return "member/loginMember";
+	    }
+		
+		teamService.removeEventFromTeam(teamID, id);
+		eventService.deleteEvent(id);
+		
+		return "redirect:/team/list";
+	}
+	
 }
