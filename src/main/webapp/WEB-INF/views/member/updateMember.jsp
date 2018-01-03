@@ -18,7 +18,7 @@
         <div class="container">
             <div class="navbar-brand">
                 <a class="navbar-item" href="../">
-                    <h1 class="title"> Sporitfy</h1>
+                    <h1 class="title"> Sportyfy</h1>
                     <br />
                     <h4 class="subtitle">  Stay connected</h4>
                 </a>
@@ -32,9 +32,6 @@
                 <div class="navbar-end">
                     <a href="${pageContext.request.contextPath }/home/curses" class="navbar-item">
                         Curses
-                      </a>
-                    <a href="${pageContext.request.contextPath }/home/trainings" class="navbar-item">
-                        Trainings
                       </a>
                     <a href="${pageContext.request.contextPath }/home/trainers" class="navbar-item">
                         Trainers
@@ -63,7 +60,10 @@
                                           Create team
                                         </a>
                                         <a href="${pageContext.request.contextPath}/team/list/admin" class="dropdown-item">
-                                          List of teams
+                                          My teams
+                                        </a>
+                                        <a href="${pageContext.request.contextPath}/team/list" class="dropdown-item">
+                                          All teams
                                         </a>
                                         <hr class="dropdown-divider">
                                         <a href="${pageContext.request.contextPath}/member/update" class="dropdown-item">
@@ -158,8 +158,6 @@
             </div>
          </div>
       </section>
-
-            
     <footer class="footer">
         <div class="container">
             <div class="columns">
@@ -185,14 +183,13 @@
                   <i class="fa fa-lg fa-youtube"></i>
                   </span>
                         </a>
-                        <p class="title is-5">Sporitfy</p>
-                        <p class="subtitle">666 House, Street 123, State +123 345 678 910</p>
+                        <p class="title is-5">Sportyfy</p>
+                        <p class="subtitle">666 House, <br /> Street 123, <br /> State +123 345 678 910</p>
                 </div>
                 <div class="column">
                     <p class="title is-5 menu-label">Menu: </p>
                     <ul class="menu-list">
                         <li><a href="${pageContext.request.contextPath }/home/curses">Curses</a></li>
-                        <li><a href="${pageContext.request.contextPath }/home/trainings">Trainings</a></li>
                         <li><a href="${pageContext.request.contextPath }/home/trainers">Trainers</a></li>
                         <li><a href="${pageContext.request.contextPath }/home/faq">Faq</a></li>
                         <li><a href="${pageContext.request.contextPath }/home/about">Contac Us</a></li>
@@ -206,13 +203,9 @@
             </div>
         </div>
     </footer>
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" />
-    
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" />
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bulma.js"></script>
- 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/custom.js"></script>
-	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
-
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/custom.js"></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 </body>
-
 </html>

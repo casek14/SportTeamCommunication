@@ -53,8 +53,4 @@ public class HomeController {
 		return "home/trainers";
 	}
 	
-	@RequestMapping(value="/home/trainings",method=RequestMethod.GET)
-	public String showTrainings(ModelMap model) {
-		return "home/trainings";
-	}
 }
