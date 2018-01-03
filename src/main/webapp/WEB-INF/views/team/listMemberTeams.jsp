@@ -88,16 +88,16 @@
                      <th><abbr title="Position">Team Name</abbr></th>
                      <th>Team description</th>
                      <th>Edit</th>
-                     <th>Delete</th>                  
+                     <th>Delete</th>
                   </tr>
                </thead>
                <tfoot>
                   <tr>
                      <th><abbr title="Position">Team Name</abbr></th>
                      <th>Team description</th>
-                     <th>Edit</th>    
-                     <th>Delete</th>                    
-                                     
+                     <th>Edit</th>
+                     <th>Delete</th>
+
                   </tr>
                </tfoot>
                <tbody>
@@ -116,11 +116,11 @@
                         </td>
                         <td>
                         	<a href="#">Delete</a>
-                        </td>                        
+                        </td>
                   </tr>
                   </c:forEach>
                </tbody>
-            
+
          </table>
       </div>
     <footer class="footer">
@@ -157,7 +157,7 @@
                         <li><a href="${pageContext.request.contextPath }/home/curses">Curses</a></li>
                         <li><a href="${pageContext.request.contextPath }/home/trainers">Trainers</a></li>
                         <li><a href="${pageContext.request.contextPath }/home/faq">Faq</a></li>
-                        <li><a href="${pageContext.request.contextPath }/home/about">Contac Us</a></li>
+                        <li><a href="${pageContext.request.contextPath }/home/about">Contact Us</a></li>
                         <li><a href="${pageContext.request.contextPath }/member/login">Login in</a></li>
                     </ul>
                 </div>

@@ -80,7 +80,7 @@
 
                             </div>
                         </div>
-                        <input class="button is-block is-info is-large" type="submit" value="Login"/>                       
+                        <input class="button is-block is-info is-large" type="submit" value="Login"/>
                     </s:form>
                     <p class="has-text-grey">
                         <a href="${pageContext.request.contextPath }/member/register">Sign Up</a> &nbsp;·&nbsp;
@@ -89,7 +89,7 @@
                 </div>
             </div>
         </div>
-    </section>             
+    </section>
     <footer class="footer">
         <div class="container">
             <div class="columns">
@@ -124,7 +124,7 @@
                         <li><a href="${pageContext.request.contextPath }/home/curses">Curses</a></li>
                         <li><a href="${pageContext.request.contextPath }/home/trainers">Trainers</a></li>
                         <li><a href="${pageContext.request.contextPath }/home/faq">Faq</a></li>
-                        <li><a href="${pageContext.request.contextPath }/home/about">Contac Us</a></li>
+                        <li><a href="${pageContext.request.contextPath }/home/about">Contact Us</a></li>
                         <li><a href="${pageContext.request.contextPath }/member/login">Login in</a></li>
                     </ul>
                 </div>

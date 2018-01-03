@@ -56,7 +56,7 @@
         <div class="hero-body">
             <div class="container has-text-centered">
                 <h1 class="title">
-                  Are you missing fridens on sports?
+                  Are you missing friends on sports?
                </h1>
                 <h2 class="subtitle">
                   Don't be haste and register right now!
@@ -141,7 +141,7 @@
                         <li><a href="${pageContext.request.contextPath }/home/curses">Curses</a></li>
                         <li><a href="${pageContext.request.contextPath }/home/trainers">Trainers</a></li>
                         <li><a href="${pageContext.request.contextPath }/home/faq">Faq</a></li>
-                        <li><a href="${pageContext.request.contextPath }/home/about">Contac Us</a></li>
+                        <li><a href="${pageContext.request.contextPath }/home/about">Contact Us</a></li>
                         <li><a href="${pageContext.request.contextPath }/member/login">Login in</a></li>
                     </ul>
                 </div>
@@ -153,12 +153,8 @@
         </div>
     </footer>
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" />
-    
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bulma.js"></script>
+        <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bulma.js"></script>
  	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
  	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/custom.js"></script>
-
-
 </body>
-
 </html>

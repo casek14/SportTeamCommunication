@@ -90,7 +90,7 @@
 
         <h3>Time:</h3>
         ${event.time }
-        
+
         <h3>Date:</h3>
         ${event.date }
 
@@ -102,17 +102,17 @@
         <c:if test="${admin == true}">
         <a class="button is-block is-danger is-large" href="${pageContext.request.contextPath }/event/delete/${team.team_id}/${event.event_id}" >Delete event</a>
         </c:if>
-     
+
         <h4>List of sportsman:</h4>
         <ul>
             <c:forEach var="member" items="${event.loggedUsers }">
                 <li>
-                    ${member.firstName } ${member.lastName }  
+                    ${member.firstName } ${member.lastName }
                 </li>
             </c:forEach>
 
         </ul>
-      
+
       </div>
 
       </div>
@@ -150,7 +150,7 @@
                         <li><a href="${pageContext.request.contextPath }/home/curses">Curses</a></li>
                         <li><a href="${pageContext.request.contextPath }/home/trainers">Trainers</a></li>
                         <li><a href="${pageContext.request.contextPath }/home/faq">Faq</a></li>
-                        <li><a href="${pageContext.request.contextPath }/home/about">Contac Us</a></li>
+                        <li><a href="${pageContext.request.contextPath }/home/about">Contact Us</a></li>
                         <li><a href="${pageContext.request.contextPath }/member/login">Login in</a></li>
                     </ul>
                 </div>

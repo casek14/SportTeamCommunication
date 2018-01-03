@@ -80,17 +80,17 @@
                     </p>
 
                 </div>
-                
+
             </div>
         </div>
-    </nav>    
+    </nav>
       <section class="hero">
          <div class="hero-body">
             <div class="container has-text-centered">
                <div class="column is-4 is-offset-4">
                   <h3 class="title">Create Event</h3>
                   <p class="subtitle has-text-grey">Please give us your information about your event.</p>
-                  <s:form  commandName="eventData" action="${pageContext.request.contextPath }/event/create" method="post">                     
+                  <s:form  commandName="eventData" action="${pageContext.request.contextPath }/event/create" method="post">
                      <div class="field">
                         <div class="control">
                            <s:input path="name" class="input is-large" type="text" placeholder="Name of event" autofocus="" />
@@ -114,7 +114,7 @@
                </div>
             </div>
          </div>
-      </section>            
+      </section>
     <footer class="footer">
         <div class="container">
             <div class="columns">
@@ -149,7 +149,7 @@
                         <li><a href="${pageContext.request.contextPath }/home/curses">Curses</a></li>
                         <li><a href="${pageContext.request.contextPath }/home/trainers">Trainers</a></li>
                         <li><a href="${pageContext.request.contextPath }/home/faq">Faq</a></li>
-                        <li><a href="${pageContext.request.contextPath }/home/about">Contac Us</a></li>
+                        <li><a href="${pageContext.request.contextPath }/home/about">Contact Us</a></li>
                         <li><a href="${pageContext.request.contextPath }/member/login">Login in</a></li>
                     </ul>
                 </div>

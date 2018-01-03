@@ -74,23 +74,23 @@
 
                     </p>
                 </div>
-                
+
             </div>
         </div>
-    </nav>    
+    </nav>
       <section class="hero">
          <div class="hero-body">
             <div class="container has-text-centered">
                <div class="column is-4 is-offset-4">
                   <h3 class="title">Event Created</h3>
-                  <p class="subtitle has-text-grey">Your event was created successfuly!</p>                
+                  <p class="subtitle has-text-grey">Your event was created successfuly!</p>
                     <b>Name of event:</b> <p>${event.name}</p>
                     <b>Description:</b> <p>${event.description}</p>
                     <b>Date:</b> <p>${event.date}</p>
                </div>
             </div>
          </div>
-      </section>            
+      </section>
     <footer class="footer">
         <div class="container">
             <div class="columns">
@@ -125,7 +125,7 @@
                         <li><a href="${pageContext.request.contextPath }/home/curses">Curses</a></li>
                         <li><a href="${pageContext.request.contextPath }/home/trainers">Trainers</a></li>
                         <li><a href="${pageContext.request.contextPath }/home/faq">Faq</a></li>
-                        <li><a href="${pageContext.request.contextPath }/home/about">Contac Us</a></li>
+                        <li><a href="${pageContext.request.contextPath }/home/about">Contact Us</a></li>
                         <li><a href="${pageContext.request.contextPath }/member/login">Login in</a></li>
                     </ul>
                 </div>

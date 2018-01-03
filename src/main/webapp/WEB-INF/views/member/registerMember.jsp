@@ -52,17 +52,17 @@
                             <span>Login</span>
                         </a>
                     </p>
-                </div>                
+                </div>
             </div>
         </div>
-    </nav>    
+    </nav>
       <section class="hero">
          <div class="hero-body">
             <div class="container has-text-centered">
                <div class="column is-4 is-offset-4">
                   <h3 class="title">Sign UP</h3>
                   <p class="subtitle has-text-grey">Please give us your information.</p>
-                  <s:form  commandName="memberData" action="${pageContext.request.contextPath}/member/register" method="post">                    
+                  <s:form  commandName="memberData" action="${pageContext.request.contextPath}/member/register" method="post">
 
                    <div class="field">
                         <div class="control">
@@ -73,19 +73,19 @@
                      <div class="field">
                         <div class="control">
                            <s:input path="lastName" class="input is-large" type="text" placeholder="Last Name" autofocus="" />
-                           <s:errors path="lastName" cssStyle="color:red;" />                          
+                           <s:errors path="lastName" cssStyle="color:red;" />
                         </div>
                      </div>
                      <div class="field">
                         <div class="control">
                            <s:input path="email" class="input is-large" type="text" placeholder="Your email" autofocus="" />
-                           <s:errors path="email" cssStyle="color:red;" />                                 
+                           <s:errors path="email" cssStyle="color:red;" />
                         </div>
                      </div>
                      <div class="field">
                         <div class="control">
                            <s:input path="dateOfBirth" class="input is-large" type="text" placeholder="Birth date" autofocus="" />
-                           <s:errors path="dateOfBirth" cssStyle="color:red;" />     
+                           <s:errors path="dateOfBirth" cssStyle="color:red;" />
                         </div>
                      </div>
                      <div class="field">
@@ -166,7 +166,7 @@
                         <li><a href="${pageContext.request.contextPath }/home/curses">Curses</a></li>
                         <li><a href="${pageContext.request.contextPath }/home/trainers">Trainers</a></li>
                         <li><a href="${pageContext.request.contextPath }/home/faq">Faq</a></li>
-                        <li><a href="${pageContext.request.contextPath }/home/about">Contac Us</a></li>
+                        <li><a href="${pageContext.request.contextPath }/home/about">Contact Us</a></li>
                         <li><a href="${pageContext.request.contextPath }/member/login">Login in</a></li>
                     </ul>
                 </div>
