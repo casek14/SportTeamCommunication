@@ -105,7 +105,13 @@
                      </div>
                      <div class="field">
                         <div class="control">
-                           <s:input path="date" class="input is-large" type="text" placeholder="Date" autofocus="" />
+                           <s:input path="time" class="input is-large" type="time" placeholder="time" autofocus="" />
+                           <s:errors path="time" cssStyle="color:red;" />
+                        </div>
+                     </div>
+                     <div class="field">
+                        <div class="control">
+                           <s:input path="date" class="input is-large" type="date" placeholder="Date" autofocus="" />
                            <s:errors path="date" cssStyle="color:red;" />
                         </div>
                      </div>

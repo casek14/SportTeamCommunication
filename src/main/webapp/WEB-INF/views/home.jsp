@@ -133,7 +133,7 @@
                   </span>
                         </a>
                         <p class="title is-5">Sportyfy</p>
-                        <p class="subtitle">666 House <br />, Street 123<br />, State +123 345 678 910</p>
+                        <p class="subtitle">666 House,<br />Street 123,<br />State +123 345 678 910</p>
                 </div>
                 <div class="column">
                     <p class="title is-5 menu-label">Menu: </p>

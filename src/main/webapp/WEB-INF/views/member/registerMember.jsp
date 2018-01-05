@@ -66,19 +66,19 @@
 
                    <div class="field">
                         <div class="control">
-                           <s:input path="firstName" class="input is-large" type="text" placeholder="First Name" autofocus="" />
+                           <s:input path="firstName" class="input is-large" type="text" placeholder="First Name *" autofocus="" />
                            <s:errors path="firstName" cssStyle="color:red;" />
                         </div>
                      </div>
                      <div class="field">
                         <div class="control">
-                           <s:input path="lastName" class="input is-large" type="text" placeholder="Last Name" autofocus="" />
+                           <s:input path="lastName" class="input is-large" type="text" placeholder="Last Name *" autofocus="" />
                            <s:errors path="lastName" cssStyle="color:red;" />
                         </div>
                      </div>
                      <div class="field">
                         <div class="control">
-                           <s:input path="email" class="input is-large" type="text" placeholder="Your email" autofocus="" />
+                           <s:input path="email" class="input is-large" type="text" placeholder="Your email *" autofocus="" />
                            <s:errors path="email" cssStyle="color:red;" />
                         </div>
                      </div>
@@ -122,10 +122,12 @@
                      <div class="field">
                         <div class="control">
 
-                           <s:input path="password" class="input is-large" type="password" placeholder="Password" autofocus="" />
+                           <s:input path="password" class="input is-large" type="password" placeholder="Password *" autofocus="" />
                            <s:errors path="password" cssStyle="color:red;" />
                         </div>
                      </div>
+                        <p class="help is-danger">Items with * are required.</p>
+                        <br />
                         <input class="button is-block is-info is-large" type="submit" value="Register"/>
                   </s:form>
                </div>
